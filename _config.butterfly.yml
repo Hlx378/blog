@@ -15,13 +15,18 @@ nav:
   display_title: true
   display_post_title: true
   # Whether to fix navigation bar
-  fixed: false
+  fixed: true
 
 menu:
   # Home: / || fas fa-home
   # List||fas fa-list:
   #   Music: /music/ || fas fa-music
   #   Movie: /movies/ || fas fa-video
+  首页: / || fas fa-home
+  归档: /archives/ || fas fa-box-archive
+  分类: /categories/ || fas fa-folder-open
+  标签: /tags/ || fas fa-tags
+  关于: /about/ || fas fa-user
 
 # --------------------------------------
 # Code Blocks Settings
@@ -46,8 +51,8 @@ code_blocks:
 # Formal:
 #   icon: link || the description || color
 social:
-  # fab fa-github: https://github.com/xxxxx || Github || '#24292e'
-  # fas fa-envelope: mailto:xxxxxx@gmail.com || Email || '#4a7dbe'
+  fab fa-github: https://github.com/Hlx378 || GitHub || '#24292e'
+  fas fa-envelope: mailto:liusep@liusep.cn || 邮箱 || '#4a7dbe'
 
 # --------------------------------------
 # Image Settings
@@ -56,23 +61,23 @@ social:
 favicon: /img/favicon.png
 
 avatar:
-  img: /img/butterfly-icon.png
+  img: /img/avatar.jpg
   effect: false
 
 # Disable all banner images
 disable_top_img: false
 
 # If the banner of page not setting, it will show the default_top_img
-default_top_img:
+default_top_img: /img/bg-star.jpg
 
 # The banner image of index page
-index_img:
+index_img: /img/bg-star.jpg
 
 # The banner image of archive page
-archive_img:
+archive_img: /img/bg-star.jpg
 
 # Note: tag page, not tags page
-tag_img:
+tag_img: /img/bg-star.jpg
 
 # The banner image of tag page, you can set the banner image for each tag
 # Format:
@@ -80,7 +85,7 @@ tag_img:
 tag_per_img:
 
 # Note: category page, not categories page
-category_img:
+category_img: /img/bg-star.jpg
 
 # The banner image of category page, you can set the banner image for each category
 # Format:
@@ -102,7 +107,7 @@ cover:
   archives_enable: true
   # When cover is not set, the default cover is displayed
   default_cover:
-    # - xxx.jpg
+    - /img/bg-star.jpg
 
 # Replace Broken Images
 error_img:
@@ -149,12 +154,12 @@ index_top_img_height:
 
 # The subtitle on homepage
 subtitle:
-  enable: false
+  enable: true
   # Typewriter Effect
   effect: true
   # Customize typed.js
   # https://github.com/mattboldt/typed.js/#customization
-  typed_option:
+  typed_option: '{"typeSpeed": 100, "backSpeed": 50, "loop": true, "smartBackspace": false}'
   # Source - Call the third-party service API (Chinese only)
   # It will show the source first, then show the content of sub
   # Choose: false/1/2/3
@@ -165,6 +170,9 @@ subtitle:
   source: false
   # If you close the typewriter effect, the subtitle will only show the first line of sub
   sub:
+    - 记录学习 · 督促成长
+    - 每一步都算数
+    - 保持好奇，持续更新
 
 # Article layout on the homepage
 # 1: Cover on the left, info on the right
@@ -259,12 +267,12 @@ footer:
   nav:
   owner:
     enable: true
-    since: 2025
+    since: 2026
   # Copyright of theme and framework
   copyright:
     enable: true
     version: true
-  custom_text:
+  custom_text: 保持好奇，持续更新
 
 # --------------------------------------
 # Aside Settings
@@ -284,15 +292,15 @@ aside:
     category: true
   card_author:
     enable: true
-    description:
+    description: 在技术上不断进步
     button:
       enable: true
       icon: fab fa-github
       text: Follow Me
-      link: https://github.com/xxxxxx
+      link: https://github.com/Hlx378
   card_announcement:
     enable: true
-    content: This is my Blog
+    content: 保持好奇，持续更新 🌱
   card_recent_post:
     enable: true
     # If set 0 will show all
@@ -352,7 +360,7 @@ aside:
     # Time difference between publish date and now
     # Formal: Month/Day/Year Time or Year/Month/Day Time
     # Leave it empty if you don't enable this feature
-    runtime_date:
+    runtime_date: 9/23/2026 00:00:00
 
 # --------------------------------------
 # Bottom right button
@@ -391,7 +399,6 @@ darkmode:
   # Set the light mode time. The value is between 0 and 24. If not set, the default value is 6 and 18
   start:
   end:
-
 # Show scroll percent in scroll-to-top button
 rightside_scroll_percent: false
 
@@ -429,7 +436,7 @@ copy:
 
 # Need to install the hexo-wordcount plugin
 wordcount:
-  enable: false
+  enable: true
   # Display the word count of the article in post meta
   post_wordcount: true
   # Display the time to read the article in post meta
@@ -474,8 +481,8 @@ math:
 search:
   # Choose: algolia_search / local_search / docsearch
   # leave it empty if you don't need search
-  use:
-  placeholder:
+  use: local_search
+  placeholder: 搜索文章...
 
   # Algolia Search
   algolia_search:
@@ -485,7 +492,7 @@ search:
   # Local Search
   local_search:
     # Preload the search data when the page loads.
-    preload: false
+    preload: true
     # Show top n results per article, show all results by setting to -1
     top_n_per_article: 1
     # Unescape html strings to the readable one.
@@ -809,7 +816,7 @@ preloader:
 enter_transitions: true
 
 # Default display mode - light (default) / dark
-display_mode: light
+display_mode: dark
 
 # Configuration for beautifying the content of the article
 beautify:
@@ -913,7 +920,7 @@ clickShowText:
 # https://github.com/francoischalifour/medium-zoom
 # https://fancyapps.com/fancybox/
 # Leave it empty if you don't need lightbox
-lightbox:
+lightbox: fancybox
 
 # --------------------------------------
 # Tag Plugins settings

@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle: ''
-description: ''
-keywords:
-author: John Doe
-language: en
-timezone: ''
+title: liusep
+subtitle: '在技术上不断进步'
+description: '记录学习，督促成长。这里是我持续更新技术笔记与项目的地方。'
+keywords: 'liusep,学习笔记,技术博客,编程,成长记录'
+author: liusep
+language: zh-CN
+timezone: 'Asia/Shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
+url: https://liusep.cn
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -97,6 +97,20 @@ ignore:
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: butterfly
+
+# Search
+## https://github.com/next-theme/hexo-generator-searchdb
+search:
+  path: search.xml
+  field: post
+  content: true
+  format: html
+
+# Word count
+## https://github.com/willin/hexo-wordcount
+word_count:
+  post_wordcount: true
+  min2read: true
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment

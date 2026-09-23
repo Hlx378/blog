@@ -1,0 +1,26 @@
+# 依赖
+node_modules/
+package-lock.json.bak
+
+# Hexo 运行时产物
+db.json
+public/
+.deploy_git/
+.vercel/
+
+# 生成物
+*.log
+npm-debug.log*
+yarn-error.log*
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+
+# 临时文件
+.workbuddy/
+.probe*.tmp
+.probe*.json
