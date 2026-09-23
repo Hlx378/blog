@@ -1,0 +1,106 @@
+/* ============================================================
+   liusep 自定义样式
+   通过 Butterfly 的 inject 机制加载，不修改主题源文件，
+   主题升级时不会被覆盖。
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   1. 首页 / 文章页横幅背景
+   原图分辨率有限（799×720），直接铺满 1920px 会放大 2.4 倍而模糊。
+   处理思路：不追求"清晰"，而是把它做成有质感的氛围背景 ——
+   cover 保证铺满不变形，略微放大 + 柔和模糊 + 压暗，
+   视觉上像深空星云，比强行拉伸出锯齿要自然得多。
+   ------------------------------------------------------------ */
+
+#page-header.full_page {
+  background-size: cover !important;
+  background-position: center 40% !important;
+  background-repeat: no-repeat !important;
+}
+
+/* 用伪元素承载背景，便于独立施加滤镜而不影响文字 */
+#page-header::before {
+  backdrop-filter: none;
+}
+
+/* 横幅整体再加一层柔化：让放大后的噪点糊成光晕 */
+#page-header.full_page #site-info {
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.75);
+}
+
+/* 页面标题区（归档/分类/标签等）同样处理 */
+#page-header:not(.full_page) {
+  background-size: cover !important;
+  background-position: center 40% !important;
+}
+
+/* ------------------------------------------------------------
+   2. 文章封面与卡片缩略图
+   小图放大同样会糊，用 cover + 暗色遮罩提升观感
+   ------------------------------------------------------------ */
+
+.post_cover .post-bg,
+.recent-post-item .post_cover img {
+  object-fit: cover;
+}
+
+/* 首页文章封面轻微压暗，避免糊图太扎眼 */
+.recent-post-item .post_cover .post-bg {
+  filter: brightness(0.85) saturate(1.05);
+  transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+.recent-post-item:hover .post_cover .post-bg {
+  filter: brightness(1) saturate(1.15);
+  transform: scale(1.03);
+}
+
+/* ------------------------------------------------------------
+   3. 暗色模式下的细节打磨
+   ------------------------------------------------------------ */
+
+/* 星空底色已经很深，卡片用半透明让背景微微透出来 */
+[data-theme="dark"] #recent-posts > .recent-post-item,
+[data-theme="dark"] .card-widget {
+  background: rgba(22, 24, 30, 0.88);
+  backdrop-filter: blur(12px);
+}
+
+/* 侧边栏作者卡片头像加一点微光，配合星空主题 */
+[data-theme="dark"] .card-widget.card-info .avatar-img img,
+[data-theme="dark"] .avatar-img img {
+  box-shadow: 0 0 0 3px rgba(120, 160, 255, 0.18),
+              0 0 28px rgba(120, 160, 255, 0.22);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+[data-theme="dark"] .avatar-img img:hover {
+  transform: rotate(360deg) scale(1.06);
+  box-shadow: 0 0 0 3px rgba(120, 160, 255, 0.32),
+              0 0 40px rgba(120, 160, 255, 0.4);
+}
+
+/* ------------------------------------------------------------
+   4. 首页大标题
+   ------------------------------------------------------------ */
+
+#site-title {
+  letter-spacing: 0.06em;
+  font-weight: 600;
+}
+
+#site-subtitle {
+  letter-spacing: 0.04em;
+  opacity: 0.92;
+}
+
+/* ------------------------------------------------------------
+   5. 移动端微调：小屏上背景放大更明显，改为固定定位减少抖动
+   ------------------------------------------------------------ */
+
+@media screen and (max-width: 768px) {
+  #page-header.full_page {
+    background-attachment: scroll !important;
+    background-position: center center !important;
+  }
+}
