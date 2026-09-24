@@ -31,7 +31,7 @@ top_img: /img/bg-star.jpg
 ## 联系我
 
 - GitHub：[Hlx378](https://github.com/Hlx378)
-- 邮箱：liusep@liusep.cn
+- 邮箱：2846618574@qq.com
 
 ---
 
